@@ -2,7 +2,6 @@
 /obj
 /build
 
-
 *.exe
 *.lib
 *.pdb
