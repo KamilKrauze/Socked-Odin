@@ -1,4 +1,12 @@
+/.vs
+/obj
+/build
 
-/.vscode
+
 *.exe
-Socked/lib/Socked
+*.lib
+*.pdb
+*.idb
+*.sln
+*.vcxproj
+*.user
