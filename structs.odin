@@ -18,17 +18,23 @@ Addr :: struct #raw_union
 
 // Definition of the sockaddr_in structure (common for IPv4 addresses)
 SocketSpecs :: struct #raw_union {
+    // Address family
     family: u16,
+    
+    // Network port
     port: u16,
 
+    // address: u32, // 4-byte IP address (use network byte order)
     address: Addr,
 
     zero: [8]u8
-    // address: u32, // 4-byte IP address (use network byte order)
+    
 }
 
 // Definition of the SkdSocket structure
 Socket :: struct #raw_union {
+    // The socket pointer reference
     socket: u64,
-    specs: SocketSpecs,  // Use sockaddr_in to represent socket specifications
+    // Socket specifications
+    specs: SocketSpecs,
 }
