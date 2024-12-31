@@ -17,7 +17,7 @@ foreign Socked {
     close_socket :: proc(skt: ^Socket) ---
     // Cleanup any platform spcific data
     @(link_name="skdCleanupSocket")
-    cleanup_socket :: proc(skt: ^Socket) ---
+    cleanup_socket :: proc() ---
 
     // Set socket options
     @(link_name="skdSetSocketOpt")
