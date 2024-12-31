@@ -1,6 +1,6 @@
 package Socked
 
-// Define the addr_in structure (common for IPv4 addresses)
+// Definition of the addr_in structure (common for IPv4 addresses)
 Addr :: struct #raw_union
 {
     bytes: struct {
@@ -16,7 +16,7 @@ Addr :: struct #raw_union
     data: u32
 }
 
-// Define the sockaddr_in structure (common for IPv4 addresses)
+// Definition of the sockaddr_in structure (common for IPv4 addresses)
 SocketSpecs :: struct #raw_union {
     family: u16,
     port: u16,
@@ -27,7 +27,7 @@ SocketSpecs :: struct #raw_union {
     // address: u32, // 4-byte IP address (use network byte order)
 }
 
-// Define the SkdSocket structure
+// Definition of the SkdSocket structure
 Socket :: struct #raw_union {
     socket: u64,
     specs: SocketSpecs,  // Use sockaddr_in to represent socket specifications

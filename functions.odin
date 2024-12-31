@@ -4,8 +4,8 @@ import "core:c"
 
 foreign import Socked "./lib/Socked/build/Release/Socked.lib"
 
+// Function declarations for socket operations
 foreign Socked {
-    // Function declarations for socket operations
     @(link_name="skdInitSocket")
     init_socket :: proc() ---
     @(link_name="skdCreateSocket")
@@ -20,6 +20,8 @@ foreign Socked {
     @(link_name="skdSetSocketSpecs")
     skdSetSocketSpecs :: proc(skt: ^Socket, family: u16, address: cstring, port: u16) ---
 
+    @(link_name="skdAccept")
+    accept :: proc(server_skt: ^Socket, client_skt: ^Socket) ---
     @(link_name="skdBindSocket")
     bind_socket :: proc(skt: ^Socket, family: u16, address: cstring, port: u16) ---
     @(link_name="skdConnectSocket")
@@ -33,7 +35,7 @@ foreign Socked {
     sendTo :: proc (skt: ^Socket, msg:cstring, size: u64, flags:int) ---
     
     @(link_name="skdReceive")
-    receive :: proc(skt: ^Socket, buffer: cstring, size: u64, flags: int) -> (recv_bytes: u64) ---
+    receive :: proc(skt: ^Socket, buffer: cstring, size: u64, flags: int) -> (recv_bytes: int) ---
     @(link_name="skdReceiveFrom")
-    receiveFrom :: proc(skt: ^Socket, buffer: cstring, size: u64, flags: int) -> (recv_bytes: u64) ---
+    receiveFrom :: proc(skt: ^Socket, buffer: cstring, size: u64, flags: int) -> (recv_bytes: int) ---
 }
