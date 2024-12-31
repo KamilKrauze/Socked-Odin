@@ -1,0 +1,3 @@
+[submodule "src/lib/Socked"]
+	path = src/lib/Socked
+	url = http://github.com/KamilKrauze/Socked
